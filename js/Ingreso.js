@@ -1,3 +1,4 @@
+// Define una clase llamada Ingreso que extiende la clase Dato
 class Ingreso extends Dato{
     static contadorIngresos = 0;
 

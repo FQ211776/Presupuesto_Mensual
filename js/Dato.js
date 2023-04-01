@@ -1,4 +1,6 @@
+// Define una clase llamada Dato
 class Dato{
+    // El constructor recibe dos parámetros: descripcion y valor
     constructor(descripcion, valor){
         this._descripcion = descripcion;
         this._valor = valor;
