@@ -141,7 +141,7 @@ let agregarDato = ()=>{
     let valor = forma['valor'];
     if(descripcion.value !== '' && valor.value !== ''){
         // Agrega un nuevo elemento de ingreso a la lista de ingresos y recarga los totales y la lista de ingresos en el HTML
-            ingresos.push( new Ingreso(descripcion.value, +valor.value));
+// linea q causaba el error ->  ingresos.push( new Ingreso(descripcion.value, +valor.value));
         if(tipo.value === 'ingreso'){
             ingresos.push( new Ingreso(descripcion.value, +valor.value));
             cargarCabecero();
@@ -166,6 +166,6 @@ function getInitialDate() {
   // Creamos un array con el nombre de los meses en orden
   const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
     "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-// Actualizamos el contenido del elemento con el mes y el año actual
+// Actualizamos el contenido del elemento con03 el mes y el año actual
   headerTitle.innerHTML = `Presupuesto de ${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`
 }
