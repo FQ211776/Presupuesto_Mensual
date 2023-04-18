@@ -1,41 +1,85 @@
+/<!--
+ *
+ *	               UNIVERSIDAD DON BOSCO
+ *
+ *                 FACULTAD DE INGENIERÍA
+ *                  ESCUELA DE COMPUTACIÓN
+ *     LENGUAJES INTERPRETADOS EN EL CLIENTE LIC941 G01T
+ *
+ *                        ACTIVIDAD
+ *                         DESAFIÓ 01
+ *
+ *                   TEMA DEL PROYECTO:
+ *        DISEÑO Y DESARROLLO DE UNA  APLICACIÓN WEB
+ *     PARA EL MANEJO DE  PRESUPUESTOS MENSUALES USANDO
+ *             LOS FUNDAMENTOS DE JAVASCRIPT.
+ *
+ *
+ *                         DOCENTE:
+ *              ING. OSCAR ARIEL PÉREZ TORRES
+ *
+ *      ALUMNO:                                       CARNET:
+ *
+ *      FLORES QUINTANILLA, ROBERTO CARLOS            FQ211776
+ *
+ *
+ *
+ *                     FECHA DE ENTREGA:
+ *              SOYAPANGO, 31 DE MARZO DE 2023
+ *
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--====== Titulo de la aplicación ======-->
     <title>Aplicación Presupuesto</title>
+    <!--====== Hoja de estilos ======-->
     <link href="css/estilos.css" rel="stylesheet" />
+    <!--=====================================================================-->
   </head>
   <body onload="cargarApp()">
     <div class="cabecero">
       <div class="presupuesto">
+        <!--
+        *  para que nuestra pagina muestre el mes actual,
+        *  al cual corresponde el presupuesto hacemos uso
+        *  de la función /js/app.js/getInitialDate()
+        *  el cual se invoca mediante el id "fecha-actual"
+        -->
         <div class="presupuesto_titulo">
           <h1 id="fecha-actual" class="presupuesto_titulo"></h1>
-          <!-- Presupuesto Disponible -->
         </div>
-        <div class="presupuesto_valor" id="presupuesto">+ 2,000.00</div>
+        <!--
+        *  Tanto el valor del presupuesto, como la suma de
+        *  los ingresos, los egresos, y el porcentaje que
+        *  corresponde a los egresos se cargan mediante
+        *  la función /js/app.js/cargarCabecero()
+         -->
+        <div class="presupuesto_valor" id="presupuesto"></div>
+        <!--======================-->
         <div class="presupuesto_ingreso limpiarEstilos">
           <div class="presupuesto_ingreso--texto">Ingresos</div>
           <div class="derecha">
-            <div class="presupuesto_ingreso--valor" id="ingresos">
-              +4,000.00
-            </div>
+            <div class="presupuesto_ingreso--valor" id="ingresos"></div>
             <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
           </div>
         </div>
+        <!--======================-->
         <div class="presupuesto_egreso limpiarEstilos">
           <div class="presupuesto_egreso--texto">Egresos</div>
           <div class="derecha limpiarEstilos">
-            <div class="presupuesto_egreso--valor" id="egresos">- 1,900.00</div>
-            <div class="presupuesto_egreso--porcentaje" id="porcentaje">
-              45%
-            </div>
+            <div class="presupuesto_egreso--valor" id="egresos"></div>
+            <div class="presupuesto_egreso--porcentaje" id="porcentaje"></div>
           </div>
         </div>
       </div>
     </div>
-
+    <!--=====================================================================-->
+    <!-- formulario para agregar datos -->
     <form id="forma" onsubmit="return false;">
       <div class="agregar">
         <div class="agregar_contenedor">
@@ -62,14 +106,13 @@
         </div>
       </div>
     </form>
-    <!-- Contenedor principal -->
+    <!--=====================================================================-->
+    <!-- Contenedor principal que lista ingresos y egresos-->
     <div class="contenedor limpiarEstilos">
       <!-- Ingresos -->
       <div class="ingreso">
         <h2 class="ingreso_titulo">Ingresos</h2>
-        <div id="lista-ingresos">
-          <!-- Primer ingreso -->
-        </div>
+        <div id="lista-ingresos"></div>
       </div>
       <!-- Egresos -->
       <div class="egreso">
@@ -77,13 +120,15 @@
         <div id="lista-egresos"></div>
       </div>
     </div>
+    <!--=====================================================================-->
 
-    <!-- Archivos JavaScript -->
+    <!--====== Archivos JavaScript ======-->
     <script src="js/Dato.js"></script>
     <script src="js/Ingreso.js"></script>
     <script src="js/Egreso.js"></script>
     <script src="js/app.js"></script>
-    <!-- Biblioteca de iconos -->
+
+    <!--====== Biblioteca de iconos ======-->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
